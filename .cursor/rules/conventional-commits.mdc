@@ -1,0 +1,55 @@
+---
+description: Conventional Commits for this repository
+alwaysApply: true
+---
+
+# Conventional Commits
+
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+```
+
+Match existing history in this org (`feat:`, `docs(validation):`, `chore:`).
+
+## Types
+
+| Type | Use when |
+|---|---|
+| `feat` | User-facing capability |
+| `fix` | Bug fix |
+| `docs` | Documentation only |
+| `chore` | Tooling, config, deps; no product change |
+| `refactor` | Structure change, same behaviour |
+| `test` | Tests only |
+| `ci` | CI/CD |
+| `revert` | Revert a previous commit |
+
+Scope is optional kebab-case (`docs(validation): …`).
+
+## Subject
+
+- Imperative, lowercase: `add`, not `Added` or `adds`
+- No trailing period
+- ~72 characters; wrap the body at 72
+- Body (after a blank line) explains **why**, not what
+
+## Examples
+
+```
+feat: publish enforced MTA-STS policy
+docs(validation): hedge outreach claims
+chore: skip Jekyll on GitHub Pages
+```
+
+```
+# Bad
+Update CNAME
+WIP
+Fixed the thing.
+```
+
+Do not mix unrelated changes. Do not invent types. Do not rewrite published history unless the user explicitly asks.
