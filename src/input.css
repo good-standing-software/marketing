@@ -36,11 +36,11 @@
     margin-top: 0.35em;
   }
 
-  a {
+  a:not(.brand) {
     @apply underline decoration-ink/55 underline-offset-[0.18em];
   }
 
-  a:hover {
+  a:not(.brand):hover {
     @apply decoration-ink;
   }
 
@@ -50,16 +50,17 @@
 }
 
 @layer components {
+  /* Locked: 44×44 mark, 1.875rem wordmark, gap-3.5 — see DESIGN.md. */
   .brand {
-    @apply inline-flex items-center gap-3 no-underline hover:no-underline;
+    @apply inline-flex items-center gap-3.5;
   }
 
   .brand-mark {
-    @apply h-9 w-auto shrink-0;
+    @apply h-11 w-11 shrink-0 object-contain;
   }
 
   .wordmark {
-    @apply font-serif text-[1.625rem] font-normal leading-none tracking-[0.02em] text-ink no-underline hover:no-underline;
+    @apply font-serif text-[1.875rem] font-normal leading-none tracking-[0.02em] text-ink;
   }
 
   .nav-link {
