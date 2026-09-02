@@ -50,6 +50,7 @@
 }
 
 @layer components {
+  /* Locked: 44×44 mark, 1.875rem wordmark, gap-3.5 — see DESIGN.md. */
   .brand {
     @apply inline-flex items-center gap-3.5;
   }
