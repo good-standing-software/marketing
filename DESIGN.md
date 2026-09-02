@@ -32,20 +32,20 @@ Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper p
 
 | File | Use |
 |---|---|
-| `assets/logo/GoodStanding-mark-padded.svg` | Header combination mark (beside the CSS serif wordmark) |
-| `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16) |
+| `assets/logo/GoodStanding-mark-tight.svg` | Header combination mark (beside the CSS serif wordmark); source for `favicon.svg` |
+| `assets/logo/GoodStanding-mark-padded.svg` | Archive only — padded crop (~54% optical fill); not the live header |
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — letterhead / email later |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — letterhead / email later |
 
-The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Do not drop the Imagine sans lockups into the header.
+The live header is **tight mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Do not drop the Imagine sans lockups into the header. The tight crop fills ~90% of its CSS box (the padded crop is ~54%), so the same 44×44 box reads as a ~40px circle.
 
-Locked combination-mark scale (re-locked after the 36px / 1.625rem bump):
+Locked combination-mark scale (re-locked after the padded 44×44 / `1.875rem` lockup still read type-heavy on Safari):
 
 | Piece | Size |
 |---|---|
-| `.brand` | `inline-flex items-center gap-3.5` |
-| `.brand-mark` | `h-11 w-11` (44×44); HTML `width`/`height` 44 |
-| `.wordmark` | `text-[1.875rem]`, tracking `0.02em`, weight normal |
+| `.brand` | `inline-flex items-center gap-3` |
+| `.brand-mark` | `h-11 w-11` (44×44); HTML `width`/`height` 44; `GoodStanding-mark-tight.svg` |
+| `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
 Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup.
 
