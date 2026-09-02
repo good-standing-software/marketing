@@ -28,7 +28,7 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 ## Mark
 
-Circular GS monogram, path-based SVG, fill `#000000` (favicon uses ink `#1A1916`). Transparent — no paper plate.
+Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate. `favicon.svg` is a copy of the tight mark.
 
 | File | Use |
 |---|---|
