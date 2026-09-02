@@ -12,5 +12,7 @@ Read and obey [DESIGN.md](DESIGN.md) before changing pages, tokens, or CSS.
 - Clay is focus/accent, not a big CTA fill. Ink for filled controls.
 - Keep GitHub Pages static: committed HTML + `assets/site.css`. No runtime, no tracking pixels.
 - After token or utility-class changes, run `npm run build:css` and commit the rebuilt stylesheet.
+- Homepage main is the single tagline only. Contact / Survey / Privacy live in the footer as those labels.
+- Never use `[&_p]:m-0`. Use real `gap-y-*` (or winning margins) for stacks.
 - Do not rewrite privacy legal copy to adjust spacing. Do not mention CPD in blurbs.
 - Names: product Good Standing; trading Good Standing Software; legal Good Standing Software Ltd.

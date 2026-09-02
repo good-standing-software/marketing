@@ -34,14 +34,27 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 ## Spacing
 
-Letterhead calm. One stack system, not competing zeroed-then-overridden margins.
+Letterhead calm. One stack system — never `[&_p]:m-0` (it beats child `mt-*` utilities, so intended gaps compute to 0).
 
-- Homepage reading measure stays `max-w-[34rem]`.
-- Related lines sit in a group (`gap-y-6` for the two lead paragraphs; `gap-y-4` for email + survey).
-- Generous pause before the contact block (`gap-y-10` between the lead group and the contact group).
-- Privacy is long-form: comfortable paragraph rhythm (`main p` in `src/input.css`) and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
+- Homepage **main** is the single product tagline only, `max-w-[34rem]`. No audience line. No mailto or survey in main.
+- If a stack of related lines is needed later, use a flex column with explicit `gap-y-*` (or margins that actually win). Do not zero paragraph margins and then fight them.
+- Privacy is long-form: a little air after the `h1` before the “Last updated” meta, comfortable paragraph rhythm (`main p` in `src/input.css`), and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
 
-Header (`py-6`) and footer (`pt-8 pb-7`) are already in balance with the letterhead; do not inflate them unless the main column has made them look tight.
+Header (`py-6`) and footer (`pt-8 pb-7`) stay in balance with the letterhead; do not inflate them unless the main column has made them look tight.
+
+## Footer
+
+Legal block first, unchanged in substance: Good Standing Software Ltd, company number (Companies House link), registered office.
+
+Then a quiet link row, labels only — not raw email or survey prose:
+
+`Contact` · `Survey` · `Privacy`
+
+| Label | Target |
+|---|---|
+| Contact | `mailto:info@goodstanding.co.uk` |
+| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN` |
+| Privacy | `privacy/` (or `./` when already on that page) |
 
 ## Motion and decoration
 
