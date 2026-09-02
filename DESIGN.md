@@ -39,6 +39,16 @@ Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper p
 
 The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Do not drop the Imagine sans lockups into the header.
 
+Locked combination-mark scale (re-locked after the 36px / 1.625rem bump):
+
+| Piece | Size |
+|---|---|
+| `.brand` | `inline-flex items-center gap-3.5` |
+| `.brand-mark` | `h-11 w-11` (44×44); HTML `width`/`height` 44 |
+| `.wordmark` | `text-[1.875rem]`, tracking `0.02em`, weight normal |
+
+Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup.
+
 ## Type
 
 - Body: system sans (`system-ui`, `-apple-system`, Segoe UI, Roboto, Helvetica Neue, Arial).
