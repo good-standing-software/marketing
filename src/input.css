@@ -59,7 +59,7 @@
   }
 
   .wordmark {
-    @apply font-serif text-[1.375rem] font-normal leading-none tracking-[0.02em] text-ink no-underline hover:no-underline;
+    @apply font-serif text-[1.625rem] font-normal leading-none tracking-[0.02em] text-ink no-underline hover:no-underline;
   }
 
   .nav-link {
