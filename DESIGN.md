@@ -28,26 +28,30 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 ## Mark
 
-Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate. `favicon.svg` is a copy of the tight mark.
+Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate.
+
+The live header is **CSS serif wordmark only** — no circular mark beside the type. Do not put the mark in the header until this is explicitly revisited.
+
+`favicon.svg` is a copy of the tight mark. The four files under `assets/logo/` stay for the favicon source and future letterhead / email. Padded masters keep their clear-space padding; do not rewrite SVG viewBoxes to strip it. Tight is for favicon / small UI only.
 
 | File | Use |
 |---|---|
-| `assets/logo/GoodStanding-mark-tight.svg` | Header combination mark (beside the CSS serif wordmark); source for `favicon.svg` |
-| `assets/logo/GoodStanding-mark-padded.svg` | Archive only — padded crop (~54% optical fill); not the live header |
+| `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16). Not the live header. |
+| `assets/logo/GoodStanding-mark-padded.svg` | Archive only — padded master with clear space intact. Not the live header. |
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — letterhead / email later |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — letterhead / email later |
 
-The live header is **tight mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Do not drop the Imagine sans lockups into the header. The tight crop fills ~90% of its CSS box (the padded crop is ~54%), so the same 44×44 box reads as a ~40px circle.
+Do not drop the Imagine sans lockups into the header.
 
-Locked combination-mark scale (re-locked after the padded 44×44 / `1.875rem` lockup still read type-heavy on Safari):
+Locked header (wordmark only):
 
 | Piece | Size |
 |---|---|
-| `.brand` | `inline-flex items-center gap-3` |
-| `.brand-mark` | `h-11 w-11` (44×44); HTML `width`/`height` 44; `GoodStanding-mark-tight.svg` |
+| Header | `flex items-baseline justify-between` |
+| Home link | `.wordmark` on the `<a>` (and the homepage `<h1>`) |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
-Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup.
+Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The wordmark home link is not underlined — global ink underlines are `a:not(.wordmark)` so Preflight’s `text-decoration: inherit` stays in force (Safari).
 
 ## Type
 
@@ -84,7 +88,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 - No gratuitous chrome, cards, gradients, or animation.
 - Links are underlined (ink at ~55% decoration; full ink on hover).
 - Focus-visible: 2px clay outline, 2px offset.
-- Brand (mark + wordmark) and nav links are not underlined at rest.
+- Wordmark and nav links are not underlined at rest.
 
 ## SEO and performance
 
