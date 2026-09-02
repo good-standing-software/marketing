@@ -1,0 +1,13 @@
+{
+  "name": "good-standing-marketing",
+  "private": true,
+  "description": "Static marketing site for goodstanding.co.uk",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./assets/site.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
