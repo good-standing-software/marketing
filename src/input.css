@@ -6,7 +6,7 @@
 @theme {
   --color-paper: #f4f1ea;
   --color-ink: #1a1916;
-  --color-muted: #5c5852;
+  --color-muted: #4f4b45;
   --color-rule: #d4cfc4;
   --color-clay: #d2644a;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
@@ -30,8 +30,9 @@
     margin-block: 0.8em;
   }
 
-  main p:first-child {
-    margin-top: 0;
+  main p:first-child,
+  main h1 + p {
+    margin-top: 0.35em;
   }
 
   a {
@@ -50,5 +51,9 @@
 @layer components {
   .wordmark {
     @apply font-serif text-[1.375rem] font-normal leading-none tracking-[0.02em] text-ink no-underline hover:no-underline;
+  }
+
+  .nav-link {
+    @apply no-underline hover:underline;
   }
 }
