@@ -53,7 +53,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 | Label | Target |
 |---|---|
 | Contact | `mailto:info@goodstanding.co.uk` |
-| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN` |
+| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN` (new tab: `target="_blank"` `rel="noopener noreferrer"`) |
 | Privacy | `privacy/` (or `./` when already on that page) |
 
 ## Motion and decoration
@@ -71,7 +71,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 
 ## Tally / research survey
 
-The live research form is **[Bz5oLN](https://research.goodstanding.co.uk/r/Bz5oLN)** (`research.goodstanding.co.uk`). It is the branded survey.
+The live research form is **[Bz5oLN](https://research.goodstanding.co.uk/r/Bz5oLN)** (`research.goodstanding.co.uk`). It is the branded survey. Footer **Survey** opens it in a new tab; Contact (mailto) and Privacy stay same-tab.
 
 Use the **same tokens** as this site — do not invent a second palette:
 
