@@ -36,7 +36,7 @@
   }
 
   a {
-    @apply underline decoration-ink/35 underline-offset-[0.18em];
+    @apply underline decoration-ink/55 underline-offset-[0.18em];
   }
 
   a:hover {
