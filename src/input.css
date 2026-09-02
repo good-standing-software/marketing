@@ -1,7 +1,8 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 
 @source "../index.html";
 @source "../privacy/index.html";
+@source not inline("contents");
 
 @theme {
   --color-paper: #f4f1ea;
