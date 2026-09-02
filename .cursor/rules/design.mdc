@@ -1,0 +1,16 @@
+---
+description: Holding-site visual system — read DESIGN.md
+globs: "*.html,src/**/*.css,assets/site.css,DESIGN.md"
+alwaysApply: true
+---
+
+# Holding site design
+
+Read and obey [DESIGN.md](DESIGN.md) before changing pages, tokens, or CSS.
+
+- Do not invent colours, typefaces, or a second palette. Use `paper` / `ink` / `muted` / `rule` / `clay` only.
+- Clay is focus/accent, not a big CTA fill. Ink for filled controls.
+- Keep GitHub Pages static: committed HTML + `assets/site.css`. No runtime, no tracking pixels.
+- After token or utility-class changes, run `npm run build:css` and commit the rebuilt stylesheet.
+- Do not rewrite privacy legal copy to adjust spacing. Do not mention CPD in blurbs.
+- Names: product Good Standing; trading Good Standing Software; legal Good Standing Software Ltd.
