@@ -36,11 +36,11 @@
     margin-top: 0.35em;
   }
 
-  a {
+  a:not(.brand) {
     @apply underline decoration-ink/55 underline-offset-[0.18em];
   }
 
-  a:hover {
+  a:not(.brand):hover {
     @apply decoration-ink;
   }
 
@@ -50,26 +50,16 @@
 }
 
 @layer components {
-  /* Shorthand so Safari drops -webkit-text-decoration from the global `a`. */
   .brand {
-    @apply inline-flex items-center gap-3;
-  }
-
-  a.brand,
-  a.brand:hover,
-  a.brand:focus-visible {
-    -webkit-text-decoration: none;
-    text-decoration: none;
+    @apply inline-flex items-center gap-3.5;
   }
 
   .brand-mark {
-    @apply block h-9 w-9 shrink-0 object-contain;
+    @apply h-11 w-11 shrink-0 object-contain;
   }
 
   .wordmark {
-    @apply font-serif text-[1.625rem] font-normal leading-none tracking-[0.02em] text-ink;
-    -webkit-text-decoration: none;
-    text-decoration: none;
+    @apply font-serif text-[1.875rem] font-normal leading-none tracking-[0.02em] text-ink;
   }
 
   .nav-link {
