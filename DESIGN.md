@@ -67,7 +67,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 
 - Keep the site static HTML + committed CSS. No application runtime, no tracking pixels, no analytics SDKs.
 - Do not invent new schema.org types or a second JSON-LD graph. Existing Organisation / WebSite / WebPage markup on `main` is enough.
-- No Lighthouse theatre: do not add preload, font-display hacks, or extra meta for scores.
+- Keep the single CSS preload already on the pages (`assets/site.css`). Do not invent extra preloads, font theatre, or speculative optimisations.
 
 ## Tally / research survey
 
@@ -83,4 +83,4 @@ Document alignment here only. Do not drive Tally via API from this repo.
 
 ## Out of scope here
 
-Logos, Lighthouse campaigns, Tally API edits, and copy/SEO JSON-LD rewrites belong on their own changes.
+Logos, further Lighthouse score campaigns, Tally API edits, and copy/SEO JSON-LD rewrites belong on their own changes. The existing stylesheet preload stays.
