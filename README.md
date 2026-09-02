@@ -2,6 +2,8 @@
 
 Static holding site for [goodstanding.co.uk](https://goodstanding.co.uk), served from GitHub Pages.
 
+Visual tokens, spacing, and naming conventions live in [DESIGN.md](DESIGN.md).
+
 There is no application runtime. Pages are committed HTML plus a built stylesheet.
 
 ## Styles
