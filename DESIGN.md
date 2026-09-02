@@ -26,6 +26,19 @@ Never write “trades as Good Standing”. Do not mention CPD in marketing blurb
 
 Do not invent colours. Do not use clay as a fill for large CTAs on this site. If a filled control is required, use ink on paper.
 
+## Mark
+
+Circular GS monogram, path-based SVG, fill `#000000` (favicon uses ink `#1A1916`). Transparent — no paper plate.
+
+| File | Use |
+|---|---|
+| `assets/logo/GoodStanding-mark-padded.svg` | Header combination mark (beside the CSS serif wordmark) |
+| `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16) |
+| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — letterhead / email later |
+| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — letterhead / email later |
+
+The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Do not drop the Imagine sans lockups into the header.
+
 ## Type
 
 - Body: system sans (`system-ui`, `-apple-system`, Segoe UI, Roboto, Helvetica Neue, Arial).
@@ -61,7 +74,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 - No gratuitous chrome, cards, gradients, or animation.
 - Links are underlined (ink at ~55% decoration; full ink on hover).
 - Focus-visible: 2px clay outline, 2px offset.
-- Wordmark and nav links are not underlined at rest.
+- Brand (mark + wordmark) and nav links are not underlined at rest.
 
 ## SEO and performance
 
@@ -83,4 +96,4 @@ Document alignment here only. Do not drive Tally via API from this repo.
 
 ## Out of scope here
 
-Logos, further Lighthouse score campaigns, Tally API edits, and copy/SEO JSON-LD rewrites belong on their own changes. The existing stylesheet preload stays.
+Further Lighthouse score campaigns, Tally API edits, and copy/SEO JSON-LD rewrites belong on their own changes. The existing stylesheet preload stays.
