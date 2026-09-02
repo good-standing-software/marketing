@@ -28,30 +28,26 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 ## Mark
 
-Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate.
+Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate. `favicon.svg` is a copy of the tight mark.
 
-The live header is **CSS serif wordmark only** — no circular mark beside the type. Do not put the mark in the header until this is explicitly revisited.
-
-`favicon.svg` is a copy of the tight mark. The four files under `assets/logo/` stay for the favicon source and future letterhead / email. Padded masters keep their clear-space padding; do not rewrite SVG viewBoxes to strip it. Tight is for favicon / small UI only.
+The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Size the CSS box for optical ink diameter, not the padded viewBox — the padded fill is ≈ 54% of the box, so a `56×56` box reads as ~30px of ink. Keep clear-space padding in the SVG masters; do not rewrite viewBoxes to strip it. Tight is for the favicon only. Do not drop the Imagine sans lockups into the header.
 
 | File | Use |
 |---|---|
+| `assets/logo/GoodStanding-mark-padded.svg` | Header combination mark (beside the CSS serif wordmark). Keep the padded viewBox. |
 | `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16). Not the live header. |
-| `assets/logo/GoodStanding-mark-padded.svg` | Archive only — padded master with clear space intact. Not the live header. |
-| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — letterhead / email later |
-| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — letterhead / email later |
+| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — Imagine sans; letterhead / email later. Not the live site. |
+| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — Imagine sans; letterhead / email later. Not the live site. |
 
-Do not drop the Imagine sans lockups into the header.
-
-Locked header (wordmark only):
+Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×):
 
 | Piece | Size |
 |---|---|
-| Header | `flex items-baseline justify-between` |
-| Home link | `.wordmark` on the `<a>` (and the homepage `<h1>`) |
+| `.brand` | `inline-flex items-center gap-3` |
+| `.brand-mark` | `h-14 w-14` (56×56); HTML `width`/`height` 56; `object-contain` |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
-Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The wordmark home link is not underlined — global ink underlines are `a:not(.wordmark)` so Preflight’s `text-decoration: inherit` stays in force (Safari).
+Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup (Safari). Focus-visible on the brand is the clay outline only.
 
 ## Type
 
@@ -88,7 +84,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 - No gratuitous chrome, cards, gradients, or animation.
 - Links are underlined (ink at ~55% decoration; full ink on hover).
 - Focus-visible: 2px clay outline, 2px offset.
-- Wordmark and nav links are not underlined at rest.
+- Brand (mark + wordmark) and nav links are not underlined at rest.
 
 ## SEO and performance
 
