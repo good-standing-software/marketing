@@ -30,30 +30,27 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate. `favicon.svg` is a copy of the tight mark.
 
-The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Size the CSS box for optical ink diameter, not the padded viewBox — the padded fill is ≈ 54% of the box, so a `56×56` box reads as ~30px of ink. Keep clear-space padding in the SVG masters; do not rewrite viewBoxes to strip it. Tight is for the favicon only.
+The live header is **tight mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Size the CSS box so optical ink diameter ≈ wordmark capital height (~30px). The tight viewBox fill is ≈ 89% (≈5% inset each side), so a `34×34` box reads as ~30px of ink and puts the circle’s left ink on the content column. Keep clear-space padding in the SVG masters; do not rewrite viewBoxes. Favicon stays on the same tight file. Padded remains letterhead / archive only.
 
-Letterhead / archive lockups use the **same serif wordmark system** as the site: the padded mark paths plus live SVG `<text>` (“Good Standing”) in Iowan / Palatino / Georgia, fill `#000000`, weight normal, tracking `0.02em`. Imagine’s traced sans letterforms are superseded. Do **not** drop either lockup SVG into the live header — the site header stays composed (padded mark `img` + CSS `.wordmark`).
+Letterhead / archive lockups use the **same serif wordmark system** as the site: the padded mark paths plus live SVG `<text>` (“Good Standing”) in Iowan / Palatino / Georgia, fill `#000000`, weight normal, tracking `0.02em`. Imagine’s traced sans letterforms are superseded. Do **not** drop either lockup SVG into the live header — the site header stays composed (tight mark `img` + CSS `.wordmark`).
 
 | File | Use |
 |---|---|
-| `assets/logo/GoodStanding-mark-padded.svg` | Header combination mark (beside the CSS serif wordmark). Keep the padded viewBox. |
-| `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16). Not the live header. |
+| `assets/logo/GoodStanding-mark-tight.svg` | Header combination mark (beside the CSS serif wordmark) and source for `favicon.svg` (tight crop fills 16×16). |
+| `assets/logo/GoodStanding-mark-padded.svg` | Letterhead / archive only. Keep the padded viewBox. Not the live header. |
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email — padded mark left, serif “Good Standing” right. Not the live header. |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email — padded mark above, serif “Good Standing” below, centered. Not the live header. |
 
-Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-1` (4px) — the padded SVG already adds air on the right of the ink, so the flex gap stays tight.
+Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-1` (4px). The tight file has no padded clear space, so that gap is the visible air between ink and wordmark.
 
-The padded mark (~24% clear space each side) puts ~13.4px of empty box to the left of the ink at 56×56. Header crop: wrap the mark `img` in `.brand-mark-clip` (`overflow: hidden`, width `56px − 13.4px`) and `translateX(-13.4px)` the image **inside** that box so the circle’s left ink sits on the content column. Layout of `.brand` still starts at the `px-6` / `sm:px-10` padding edge.
-
-Do **not** use a negative margin on `.brand`, the mark, or any header child to “optically align” the padded clear space. That pulls the 56×56 box into the page gutter and collapses the left paper margin (reverted in #14). Do not strip the SVG viewBox; keep the padded master. Favicon stays on the tight mark.
+Do **not** use a negative margin (`-ml`) or clip/translate on the padded master (or any header child) to “optically align” clear space with the content edge. That either pulls layout into the page gutter (#14) or hides padding with overflow hacks (#15). Header uses the tight mark at the locked CSS size instead. Do not strip the padded SVG viewBox. Favicon stays on the tight mark.
 
 Shared page inset (header, main, footer): `px-6 sm:px-10`.
 
 | Piece | Size |
 |---|---|
 | `.brand` | `inline-flex items-center gap-1` |
-| `.brand-mark-clip` | overflow hidden; 42.6×56 (crops left clear space only) |
-| `.brand-mark` | 56×56 inside the clip; `translateX(-13.4px)`; HTML `width`/`height` 56; `object-contain` |
+| `.brand-mark` | `h-[34px] w-[34px]` (34×34); HTML `width`/`height` 34; `object-contain` |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
 Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup (Safari). Focus-visible on the brand is the clay outline only.

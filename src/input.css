@@ -50,35 +50,13 @@
 }
 
 @layer components {
-  /* Locked: 56×56 padded mark (~30px ink), 1.625rem wordmark, gap-1 — see DESIGN.md. */
+  /* Locked: 34×34 tight mark (~30px ink), 1.625rem wordmark, gap-1 — see DESIGN.md. */
   .brand {
-    --brand-mark-size: 3.5rem;
-    --brand-mark-clear-left: 13.4px;
     @apply inline-flex items-center gap-1;
   }
 
-  /*
-    Crop the padded SVG’s left clear space inside the content box so the
-    circle ink meets the column edge. The img is translated inside this
-    wrapper; overflow is clipped. Do not use negative margin — that pulls
-    layout into the page gutter (#14).
-    Measured on GoodStanding-mark-padded.svg at 56×56: left clear ≈ 13.4px
-    (23.9%), optical diameter ≈ 30px.
-  */
-  .brand-mark-clip {
-    overflow: hidden;
-    flex-shrink: 0;
-    width: calc(var(--brand-mark-size) - var(--brand-mark-clear-left));
-    height: var(--brand-mark-size);
-  }
-
   .brand-mark {
-    display: block;
-    width: var(--brand-mark-size);
-    height: var(--brand-mark-size);
-    max-width: none;
-    object-fit: contain;
-    transform: translateX(calc(-1 * var(--brand-mark-clear-left)));
+    @apply h-[34px] w-[34px] shrink-0 object-contain;
   }
 
   .wordmark {
