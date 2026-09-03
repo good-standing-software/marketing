@@ -50,9 +50,9 @@
 }
 
 @layer components {
-  /* Locked: 56×56 padded mark (~30px ink), 1.625rem wordmark, gap-3 — see DESIGN.md. */
+  /* Locked: 56×56 padded mark (~30px ink), 1.625rem wordmark, gap-2 — see DESIGN.md. */
   .brand {
-    @apply inline-flex items-center gap-3;
+    @apply inline-flex items-center gap-2;
   }
 
   .brand-mark {
