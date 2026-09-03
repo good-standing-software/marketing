@@ -30,14 +30,16 @@ Do not invent colours. Do not use clay as a fill for large CTAs on this site. If
 
 Circular GS monogram, path-based SVG, fill `#000000`. Transparent — no paper plate. `favicon.svg` is a copy of the tight mark.
 
-The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Size the CSS box for optical ink diameter, not the padded viewBox — the padded fill is ≈ 54% of the box, so a `56×56` box reads as ~30px of ink. Keep clear-space padding in the SVG masters; do not rewrite viewBoxes to strip it. Tight is for the favicon only. Do not drop the Imagine sans lockups into the header.
+The live header is **padded mark + `.wordmark` serif** (Iowan / Palatino / Georgia). Size the CSS box for optical ink diameter, not the padded viewBox — the padded fill is ≈ 54% of the box, so a `56×56` box reads as ~30px of ink. Keep clear-space padding in the SVG masters; do not rewrite viewBoxes to strip it. Tight is for the favicon only.
+
+Letterhead / archive lockups use the **same serif wordmark system** as the site: the padded mark paths plus live SVG `<text>` (“Good Standing”) in Iowan / Palatino / Georgia, fill `#000000`, weight normal, tracking `0.02em`. Imagine’s traced sans letterforms are superseded. Do **not** drop either lockup SVG into the live header — the site header stays composed (padded mark `img` + CSS `.wordmark`).
 
 | File | Use |
 |---|---|
 | `assets/logo/GoodStanding-mark-padded.svg` | Header combination mark (beside the CSS serif wordmark). Keep the padded viewBox. |
 | `assets/logo/GoodStanding-mark-tight.svg` | Source for `favicon.svg` (tight crop fills 16×16). Not the live header. |
-| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive only — Imagine sans; letterhead / email later. Not the live site. |
-| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive only — Imagine sans; letterhead / email later. Not the live site. |
+| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email — padded mark left, serif “Good Standing” right. Not the live header. |
+| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email — padded mark above, serif “Good Standing” below, centered. Not the live header. |
 
 Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×):
 
