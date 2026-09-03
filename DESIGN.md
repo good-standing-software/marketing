@@ -43,14 +43,17 @@ Letterhead / archive lockups use the **same serif wordmark system** as the site:
 
 Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-1` (4px) — the padded SVG already adds air on the right of the ink, so the flex gap stays tight.
 
-Do **not** use a negative margin on `.brand-mark` to “optically align” the padded clear space with the content edge. That pulls the 56×56 box into the page gutter and collapses the left paper margin. Accept that padded masters inset the ink slightly inside the content box; clear space stays in the file. Do not strip the SVG viewBox to “fix” this.
+The padded mark (~24% clear space each side) puts ~13.4px of empty box to the left of the ink at 56×56. Header crop: wrap the mark `img` in `.brand-mark-clip` (`overflow: hidden`, width `56px − 13.4px`) and `translateX(-13.4px)` the image **inside** that box so the circle’s left ink sits on the content column. Layout of `.brand` still starts at the `px-6` / `sm:px-10` padding edge.
+
+Do **not** use a negative margin on `.brand`, the mark, or any header child to “optically align” the padded clear space. That pulls the 56×56 box into the page gutter and collapses the left paper margin (reverted in #14). Do not strip the SVG viewBox; keep the padded master. Favicon stays on the tight mark.
 
 Shared page inset (header, main, footer): `px-6 sm:px-10`.
 
 | Piece | Size |
 |---|---|
 | `.brand` | `inline-flex items-center gap-1` |
-| `.brand-mark` | `h-14 w-14` (56×56); HTML `width`/`height` 56; `object-contain` |
+| `.brand-mark-clip` | overflow hidden; 42.6×56 (crops left clear space only) |
+| `.brand-mark` | 56×56 inside the clip; `translateX(-13.4px)`; HTML `width`/`height` 56; `object-contain` |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
 Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup (Safari). Focus-visible on the brand is the clay outline only.
