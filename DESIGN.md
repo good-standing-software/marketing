@@ -41,11 +41,11 @@ Letterhead / archive lockups use the **same serif wordmark system** as the site:
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email — padded mark left, serif “Good Standing” right. Not the live header. |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email — padded mark above, serif “Good Standing” below, centered. Not the live header. |
 
-Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×):
+Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-2` (8px) — the padded SVG already adds air on the right of the ink, so the flex gap stays tight.
 
 | Piece | Size |
 |---|---|
-| `.brand` | `inline-flex items-center gap-3` |
+| `.brand` | `inline-flex items-center gap-2` |
 | `.brand-mark` | `h-14 w-14` (56×56); HTML `width`/`height` 56; `object-contain` |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
