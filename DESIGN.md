@@ -41,12 +41,16 @@ Letterhead / archive lockups use the **same serif wordmark system** as the site:
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email — padded mark left, serif “Good Standing” right. Not the live header. |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email — padded mark above, serif “Good Standing” below, centered. Not the live header. |
 
-Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-2` (8px) — the padded SVG already adds air on the right of the ink, so the flex gap stays tight.
+Locked combination-mark scale (optical: ink diameter ≈ wordmark capital height, mark ~1.0–1.2×). CSS gap is `gap-1` (4px) — the padded SVG already adds air on the right of the ink, so the flex gap stays tight.
+
+The padded mark (~24% clear space each side) puts ~13.5px of empty box to the left of the ink at 56×56. `.brand-mark` uses `-ml-3.5` (14px) so the **ink** optically lines up with the main content’s left edge. Do not strip the SVG viewBox to “fix” this; keep the padded master.
+
+Shared page inset (header, main, footer — identical so logo ink and tagline stay aligned): `px-5 sm:px-8`.
 
 | Piece | Size |
 |---|---|
-| `.brand` | `inline-flex items-center gap-2` |
-| `.brand-mark` | `h-14 w-14` (56×56); HTML `width`/`height` 56; `object-contain` |
+| `.brand` | `inline-flex items-center gap-1` |
+| `.brand-mark` | `h-14 w-14` (56×56); HTML `width`/`height` 56; `object-contain`; `-ml-3.5` optical left (padded clear space) |
 | `.wordmark` | `text-[1.625rem]`, tracking `0.02em`, weight normal |
 
 Do not enlarge body, tagline, footer, or the Privacy nav to match. Header padding stays `py-6`. The brand link is not underlined — global ink underlines are `a:not(.brand)` so Preflight’s `text-decoration: inherit` stays in force on the lockup (Safari). Focus-visible on the brand is the clay outline only.
@@ -65,7 +69,7 @@ Letterhead calm. One stack system — never `[&_p]:m-0` (it beats child `mt-*` u
 - If a stack of related lines is needed later, use a flex column with explicit `gap-y-*` (or margins that actually win). Do not zero paragraph margins and then fight them.
 - Privacy is long-form: a little air after the `h1` before the “Last updated” meta, comfortable paragraph rhythm (`main p` in `src/input.css`), and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
 
-Header (`py-6`) and footer (`pt-8 pb-7`) stay in balance with the letterhead; do not inflate them unless the main column has made them look tight.
+Header (`py-6`) and footer (`pt-8 pb-7`) stay in balance with the letterhead; do not inflate them unless the main column has made them look tight. Horizontal inset is shared: `px-5 sm:px-8` on header, main, and footer.
 
 ## Footer
 
