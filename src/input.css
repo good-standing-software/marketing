@@ -50,14 +50,13 @@
 }
 
 @layer components {
-  /* Locked: 56×56 padded mark (~30px ink), 1.625rem wordmark, gap-1, -ml-3.5 optical — see DESIGN.md. */
+  /* Locked: 56×56 padded mark (~30px ink), 1.625rem wordmark, gap-1 — see DESIGN.md. */
   .brand {
     @apply inline-flex items-center gap-1;
   }
 
   .brand-mark {
-    /* Padded SVG clear space (~13.5px at 56×56) would inset the ink; pull left so ink meets the content edge. */
-    @apply -ml-3.5 h-14 w-14 shrink-0 object-contain;
+    @apply h-14 w-14 shrink-0 object-contain;
   }
 
   .wordmark {
