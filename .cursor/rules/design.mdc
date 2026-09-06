@@ -23,12 +23,13 @@ Do not invent colours or a second palette. Do not use clay as a large CTA fill.
 
 ## Mark and header
 
-Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is a copy of the same mark. `assets/logo.png` is a 512×512 raster of that mark for the GitHub org/profile avatar. Do not invent another mark. Do not rewrite the SVG viewBox. Do not use `-ml` or clip/translate to align the mark.
+Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is a copy of the same mark. `assets/logo.png` is a 512×512 transparent raster of that mark for the GitHub org/profile avatar. `assets/logo-white.png` is the same mark on paper `#F4F1EA`. Do not invent another mark. Do not rewrite the SVG viewBox. Do not use `-ml` or clip/translate to align the mark.
 
 | File | Use |
 |---|---|
 | `assets/logo.svg` | Header mark (beside the CSS serif wordmark) |
-| `assets/logo.png` | GitHub org/profile avatar (512×512, same ink) |
+| `assets/logo.png` | GitHub org/profile avatar (512×512, transparent, same ink) |
+| `assets/logo-white.png` | Same mark on paper `#F4F1EA` (512×512 RGB) |
 | `favicon.svg` | Site favicon — same artwork as `assets/logo.svg` |
 | `assets/og.png` | Open Graph / social preview |
 
