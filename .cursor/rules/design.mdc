@@ -1,6 +1,6 @@
 ---
 description: Holding-site visual system
-globs: "*.html,src/**/*.css,assets/**"
+globs: "*.html,src/**/*.css,assets/**,llms.txt"
 ---
 
 # Holding site design
@@ -70,3 +70,4 @@ Form is Bz5oLN on `research.goodstanding.co.uk`. Tally redirect to `/thanks/` is
 - Umami Cloud script in each public `<head>` only (page views; no cookies). No other trackers or pixels
 - Keep the existing `assets/site.css` preload. Do not add more
 - Do not invent schema.org types or a second JSON-LD graph
+- `llms.txt` at the site root is the LLM-facing index (`https://goodstanding.co.uk/llms.txt`). When adding, renaming, removing, or materially changing a public page — or changing the product one-liner / company naming — update `/llms.txt` in the same PR so it stays a living index
