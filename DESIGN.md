@@ -66,7 +66,7 @@ Do not enlarge body, tagline, footer, or the Privacy nav to match. Header paddin
 Letterhead calm. One stack system — never `[&_p]:m-0` (it beats child `mt-*` utilities, so intended gaps compute to 0).
 
 - Homepage **main** is the product tagline plus one short why-this-project paragraph, `max-w-[34rem]`. Tagline first; body follows with a winning `mt-8`. Collective “we” — no founder name. One text link in the paragraph to the research survey (`?ref=homepage`); not a button. No mailto in main. Keep the column as a block wrapper — not `flex flex-col` — so `main p` margins collapse.
-- `/thanks/` is a thin post-survey page: `h1`, a few short paragraphs, then Privacy · Contact · Home. Same header/footer chrome as the rest of the site. No product pitch. Same block column so paragraph rhythm matches Privacy.
+- `/thanks/` is a thin post-survey page: `h1` and a few short paragraphs in collective “we”. Same header/footer chrome as the rest of the site; do not add a mid-page Privacy · Contact · Home row. No product pitch. Same block column so paragraph rhythm matches Privacy.
 - If a stack of related lines is needed, use a flex column with explicit `gap-y-*` (or a block stack so margins actually win). Do not put `flex flex-col` around `main p` without `gap-y-*`. Do not zero paragraph margins and then fight them.
 - Privacy is long-form: a little air after the `h1` before the “Last updated” meta, comfortable paragraph rhythm (`main p` in `src/input.css`), and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
 
