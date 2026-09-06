@@ -65,9 +65,9 @@ Do not enlarge body, tagline, footer, or the Privacy nav to match. Header paddin
 
 Letterhead calm. One stack system — never `[&_p]:m-0` (it beats child `mt-*` utilities, so intended gaps compute to 0).
 
-- Homepage **main** is the product tagline plus one short why-this-project paragraph, `max-w-[34rem]`. Tagline first; body follows with a winning `mt-8`. Collective “we” — no founder name. One text link in the paragraph to the research survey (`?ref=homepage`); not a button. No mailto in main.
-- `/thanks/` is a thin post-survey page: `h1`, a few short paragraphs, then Privacy · Contact · Home. Same header/footer chrome as the rest of the site. No product pitch.
-- If a stack of related lines is needed, use a flex column with explicit `gap-y-*` (or margins that actually win). Do not zero paragraph margins and then fight them.
+- Homepage **main** is the product tagline plus one short why-this-project paragraph, `max-w-[34rem]`. Tagline first; body follows with a winning `mt-8`. Collective “we” — no founder name. One text link in the paragraph to the research survey (`?ref=homepage`); not a button. No mailto in main. Keep the column as a block wrapper — not `flex flex-col` — so `main p` margins collapse.
+- `/thanks/` is a thin post-survey page: `h1`, a few short paragraphs, then Privacy · Contact · Home. Same header/footer chrome as the rest of the site. No product pitch. Same block column so paragraph rhythm matches Privacy.
+- If a stack of related lines is needed, use a flex column with explicit `gap-y-*` (or a block stack so margins actually win). Do not put `flex flex-col` around `main p` without `gap-y-*`. Do not zero paragraph margins and then fight them.
 - Privacy is long-form: a little air after the `h1` before the “Last updated” meta, comfortable paragraph rhythm (`main p` in `src/input.css`), and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
 
 Header (`py-6`) and footer (`pt-8 pb-7`) stay in balance with the letterhead; do not inflate them unless the main column has made them look tight. Horizontal inset is shared: `px-6 sm:px-10` on header, main, and footer.
