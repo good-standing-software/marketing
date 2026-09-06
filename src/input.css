@@ -51,9 +51,10 @@
 }
 
 @layer components {
-  /* Locked: 34×34 tight mark (~30px ink), 1.625rem wordmark, gap-1. */
+  /* Locked: 34×34 tight mark (~30px ink), 1.625rem wordmark, 6px gap. */
   .brand {
-    @apply inline-flex items-center gap-1;
+    @apply inline-flex items-center;
+    gap: 0.375rem;
   }
 
   .brand-mark {

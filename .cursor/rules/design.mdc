@@ -32,7 +32,7 @@ Live header is tight mark `img` + CSS `.wordmark`. Do not put lockup SVGs in the
 | `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email only |
 | `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email only |
 
-- `.brand`: `inline-flex items-center gap-1`
+- `.brand`: `inline-flex items-center`; gap `0.375rem` (6px / `gap-1.5`)
 - `.brand-mark`: `h-[34px] w-[34px]`; HTML 34×34; `object-contain`
 - `.wordmark`: `text-[1.625rem]`, tracking `0.02em`, weight normal
 - Wordmark stack: `"Iowan Old Style"`, `"Palatino Linotype"`, Palatino, Georgia, `"Times New Roman"`, serif
