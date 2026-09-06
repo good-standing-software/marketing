@@ -23,14 +23,13 @@ Do not invent colours or a second palette. Do not use clay as a large CTA fill.
 
 ## Mark and header
 
-Live header is tight mark `img` + CSS `.wordmark`. Do not put lockup SVGs in the header. Do not rewrite SVG viewBoxes. Do not use `-ml` or clip/translate to align the mark.
+Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is a copy of the same mark. Do not invent another mark file. Do not rewrite the SVG viewBox. Do not use `-ml` or clip/translate to align the mark.
 
 | File | Use |
 |---|---|
-| `assets/logo/GoodStanding-mark-tight.svg` | Header + favicon source |
-| `assets/logo/GoodStanding-mark-padded.svg` | Archive / letterhead only; keep its viewBox |
-| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email only |
-| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email only |
+| `assets/logo.svg` | Header mark (beside the CSS serif wordmark) |
+| `favicon.svg` | Site favicon — same artwork as `assets/logo.svg` |
+| `assets/og.png` | Open Graph / social preview |
 
 - `.brand`: `inline-flex items-center`; gap `0.375rem` (6px / `gap-1.5`)
 - `.brand-mark`: `h-[34px] w-[34px]`; HTML 34×34; `object-contain`
