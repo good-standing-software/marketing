@@ -94,7 +94,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 
 ## SEO and performance
 
-- Keep the site static HTML + committed CSS. No application runtime, no tracking pixels, no analytics SDKs.
+- Keep the site static HTML + committed CSS. No application runtime. The only analytics is the committed Umami Cloud script in each public HTML `<head>` (page views; the tracker does not use cookies). Do not add other trackers or pixels.
 - Do not invent new schema.org types or a second JSON-LD graph. Existing Organisation / WebSite / WebPage markup on `main` is enough.
 - Keep the single CSS preload already on the pages (`assets/site.css`). Do not invent extra preloads, font theatre, or speculative optimisations.
 
