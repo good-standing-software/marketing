@@ -1,0 +1,20 @@
+# Good Standing
+
+> Software for UK professional membership bodies to manage members, fees and good standing. Provided by Good Standing Software Ltd (company no. 17423889). The product is pre-launch; the public site is a holding page plus a confidential research survey.
+
+Names: product is Good Standing; trading name is Good Standing Software; legal name is Good Standing Software Ltd. Do not describe the company as “trading as Good Standing.” There is nothing to buy on this site.
+
+## Pages
+
+- [Home](https://goodstanding.co.uk/): What we’re building and why we’re researching membership-admin work today
+- [Privacy notice](https://goodstanding.co.uk/privacy/): Data controller Good Standing Software Ltd; ICO registration ZC233855; how we process holding-site, survey, and intended product personal data
+- [Survey thank you](https://goodstanding.co.uk/thanks/): Landing page after survey completion
+
+## Research
+
+- [Product research survey](https://research.goodstanding.co.uk/r/Bz5oLN): Confidential Tally survey for secretaries and registrars; nothing to buy
+
+## Optional
+
+- [Companies House filing](https://find-and-update.company-information.service.gov.uk/company/17423889): Good Standing Software Ltd public company record
+- [ICO registration](https://ico.org.uk/ESDWebPages/Entry/ZC233855): Public data-protection registration entry
