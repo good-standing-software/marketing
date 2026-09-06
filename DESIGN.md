@@ -10,9 +10,21 @@ This file is the human source of truth. Tokens live in `src/input.css` (`@theme`
 |---|---|
 | Product | Good Standing |
 | Trading | Good Standing Software |
-| Legal | Good Standing Software Ltd |
+| Legal | Good Standing Software Ltd (17423889) |
 
-Never write “trades as Good Standing”. Do not mention CPD in marketing blurbs.
+Never write that the company “trades as Good Standing”. Do not put Ltd on the trading name.
+
+Never use “CPD” in marketing, survey, or outreach blurbs. Say continuing education, fees, membership, or good standing as the sentence needs.
+
+## Voice
+
+Holding pages and `/thanks/` speak as the company (**we**), not a founder. Approachable, professional, intriguing — not matey, not salesy.
+
+Research launch: nothing to buy; research before product. No product-launch CTA grid.
+
+Privacy is an ICO-style notice: clarity and consistency, not intrigue. Do not gut the legal structure, and do not rewrite legal copy for spacing or tone.
+
+Outreach emails are first-person Mark (Director). They live in Gmail, not this repo — do not invent email files here.
 
 ## Tokens
 
@@ -65,8 +77,8 @@ Do not enlarge body, tagline, footer, or the Privacy nav to match. Header paddin
 
 Letterhead calm. One stack system — never `[&_p]:m-0` (it beats child `mt-*` utilities, so intended gaps compute to 0).
 
-- Homepage **main** is the product tagline plus one short why-this-project paragraph, `max-w-[34rem]`. Tagline first; body follows with a winning `mt-8`. Collective “we” — no founder name. One text link in the paragraph to the research survey (`?ref=homepage`); not a button. No mailto in main. Keep the column as a block wrapper — not `flex flex-col` — so `main p` margins collapse.
-- `/thanks/` is a thin post-survey page: `h1` and a few short paragraphs in collective “we”. Same header/footer chrome as the rest of the site; do not add a mid-page Privacy · Contact · Home row. No product pitch. Same block column so paragraph rhythm matches Privacy.
+- Homepage **main** is the product tagline plus one short why-this-project paragraph, `max-w-[34rem]`. Tagline first; body follows with a winning `mt-8`. One text link in the paragraph to the research survey (`?ref=homepage`); not a button. No mailto in main. Keep the column as a block wrapper — not `flex flex-col` — so `main p` margins collapse.
+- `/thanks/` is a thin post-survey page: `h1` and a few short paragraphs. Same header/footer chrome as the rest of the site; do not add a mid-page Privacy · Contact · Home row. No product pitch. Same block column so paragraph rhythm matches Privacy.
 - If a stack of related lines is needed, use a flex column with explicit `gap-y-*` (or a block stack so margins actually win). Do not put `flex flex-col` around `main p` without `gap-y-*`. Do not zero paragraph margins and then fight them.
 - Privacy is long-form: a little air after the `h1` before the “Last updated” meta, comfortable paragraph rhythm (`main p` in `src/input.css`), and a clear `mt-10` before each `h2`. Do not rewrite legal copy to “fix” spacing.
 
@@ -83,8 +95,10 @@ Then a quiet link row, labels only — not raw email or survey prose:
 | Label | Target |
 |---|---|
 | Contact | `mailto:info@goodstanding.co.uk` |
-| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN` (new tab: `target="_blank"` `rel="noopener noreferrer"`) |
+| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN?ref=footer` (new tab: `target="_blank"` `rel="noopener noreferrer"`) |
 | Privacy | `privacy/` (or `./` when already on that page) |
+
+Internal directory links keep a trailing slash (`privacy/`, `../`, `./`).
 
 ## Motion and decoration
 
@@ -101,7 +115,7 @@ Then a quiet link row, labels only — not raw email or survey prose:
 
 ## Tally / research survey
 
-The live research form is **[Bz5oLN](https://research.goodstanding.co.uk/r/Bz5oLN)** (`research.goodstanding.co.uk`). It is the branded survey. Footer **Survey** opens `https://research.goodstanding.co.uk/r/Bz5oLN` in a new tab. The homepage body links the same form with `?ref=homepage` (no `email=`). Contact (mailto) and Privacy stay same-tab. After submit, Tally should redirect to `/thanks/` on this site (wire that in Tally; do not drive Tally from this repo).
+The live research form is **[Bz5oLN](https://research.goodstanding.co.uk/r/Bz5oLN)** (`research.goodstanding.co.uk`). It is the branded survey. Footer **Survey** opens `https://research.goodstanding.co.uk/r/Bz5oLN?ref=footer` in a new tab. The homepage body links the same form with `?ref=homepage` (no `email=`). Contact (mailto) and Privacy stay same-tab. After submit, Tally should redirect to `/thanks/` on this site (wire that in Tally; do not drive Tally from this repo). Do not edit Tally form content from here.
 
 Use the **same tokens** as this site — do not invent a second palette:
 
