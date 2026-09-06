@@ -1,0 +1,35 @@
+---
+description: Brand names and holding-site prose
+alwaysApply: true
+---
+
+# Brand and prose
+
+## Names
+
+- Product: Good Standing
+- Trading: Good Standing Software (no Ltd)
+- Legal: Good Standing Software Ltd (17423889)
+- Never write that the company “trades as Good Standing”
+
+## Voice
+
+- Holding pages and `/thanks/` use company **we**, not “I’m Mark…”
+- Approachable, professional, intriguing. Not matey. Not salesy.
+- Research before product; nothing to buy. No product-launch CTA grid.
+- Do not use “CPD” in marketing, survey, or outreach blurbs — say continuing education, fees, membership, or good standing as the sentence needs
+- Outreach is first-person Mark (Director) and lives in Gmail — do not invent email files here
+
+## Tone by surface
+
+- Home / thanks: letterhead marketing — short, research posture
+- Privacy: ICO-style notice — clarity and consistency, not intrigue. Do not gut the legal structure or rewrite it for spacing or tone
+
+## Links
+
+- Internal directory links keep a trailing slash (`privacy/`, `../`, `./`)
+
+## Out of this repo
+
+- Do not edit Tally form content or drive Tally via API from here
+- Do not invent outreach email files
