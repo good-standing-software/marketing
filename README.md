@@ -2,7 +2,7 @@
 
 Static holding site for [goodstanding.co.uk](https://goodstanding.co.uk), served from GitHub Pages.
 
-Visual tokens, spacing, naming, and voice live in [DESIGN.md](DESIGN.md). Logo masters live in `assets/logo/`. The header uses the tight circular mark plus the CSS serif wordmark — not a lockup SVG. Archive horizontal/stacked lockups use the padded mark and the same serif wordmark for letterhead / email. The favicon is a copy of the tight mark.
+Visual tokens, spacing, naming, and voice live in `.cursor/rules/` (`brand.mdc`, `design.mdc`). Logo masters live in `assets/logo/`. The header uses the tight circular mark plus the CSS serif wordmark — not a lockup SVG. Archive horizontal/stacked lockups use the padded mark and the same serif wordmark for letterhead / email. The favicon is a copy of the tight mark.
 
 There is no application runtime. Pages are committed HTML plus a built stylesheet.
 

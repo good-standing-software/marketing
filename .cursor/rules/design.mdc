@@ -1,17 +1,71 @@
 ---
-description: Holding-site visual system — read DESIGN.md
-globs: "*.html,src/**/*.css,assets/site.css,DESIGN.md"
-alwaysApply: true
+description: Holding-site visual system
+globs: "*.html,src/**/*.css,assets/**"
 ---
 
 # Holding site design
 
-Read and obey [DESIGN.md](DESIGN.md) before changing pages, tokens, or CSS.
+Letterhead, not a product landing: few words, generous air, no chrome.
 
-- Do not invent colours, typefaces, or a second palette. Use `paper` / `ink` / `muted` / `rule` / `clay` only.
-- Clay is focus/accent, not a big CTA fill. Ink for filled controls.
-- Keep GitHub Pages static: committed HTML + `assets/site.css`. No runtime, no tracking pixels. Keep the existing stylesheet preload; do not add more.
-- After token or utility-class changes, run `npm run build:css` and commit the rebuilt stylesheet.
-- Homepage main: tagline + one why paragraph (text survey link, `?ref=homepage`). `/thanks/` is thin, same chrome. Footer labels only: Contact · Survey · Privacy.
-- Never use `[&_p]:m-0`. Use real `gap-y-*` (or winning margins) for stacks.
-- Do not rewrite privacy legal copy to adjust spacing.
+## Tokens
+
+Live in `src/input.css` (`@theme`). After token or utility-class changes, run `npm run build:css` and commit `assets/site.css`.
+
+| Token | Hex | Role |
+|---|---|---|
+| `paper` | `#F4F1EA` | Page background |
+| `ink` | `#1A1916` | Text; filled controls |
+| `muted` | `#4F4B45` | Secondary text |
+| `rule` | `#D4CFC4` | Hairline borders |
+| `clay` | `#D2644A` | Focus / accent only |
+
+Do not invent colours or a second palette. Do not use clay as a large CTA fill.
+
+## Mark and header
+
+Live header is tight mark `img` + CSS `.wordmark`. Do not put lockup SVGs in the header. Do not rewrite SVG viewBoxes. Do not use `-ml` or clip/translate to align the mark.
+
+| File | Use |
+|---|---|
+| `assets/logo/GoodStanding-mark-tight.svg` | Header + favicon source |
+| `assets/logo/GoodStanding-mark-padded.svg` | Archive / letterhead only; keep its viewBox |
+| `assets/logo/GoodStanding-lockup-horizontal.svg` | Archive / letterhead / email only |
+| `assets/logo/GoodStanding-lockup-stacked.svg` | Archive / letterhead / email only |
+
+- `.brand`: `inline-flex items-center gap-1`
+- `.brand-mark`: `h-[34px] w-[34px]`; HTML 34×34; `object-contain`
+- `.wordmark`: `text-[1.625rem]`, tracking `0.02em`, weight normal
+- Wordmark stack: `"Iowan Old Style"`, `"Palatino Linotype"`, Palatino, Georgia, `"Times New Roman"`, serif
+- Body: system sans. Do not load webfonts
+- Header `py-6`. Shared inset: `px-6 sm:px-10`. Footer `pt-8 pb-7`
+- Do not enlarge body, tagline, footer, or Privacy nav to match the wordmark
+- Brand is not underlined (`a:not(.brand)`). Focus-visible: 2px clay outline, 2px offset
+
+## Pages
+
+Never `[&_p]:m-0`. Use `gap-y-*` or winning margins. Do not put `flex flex-col` around `main p` without `gap-y-*`.
+
+- Homepage main: tagline + one why paragraph, `max-w-[34rem]`, body `mt-8`. One text survey link (`https://research.goodstanding.co.uk/r/Bz5oLN?ref=homepage`); not a button. No `email=`. No mailto in main. Block wrapper so `main p` margins collapse
+- `/thanks/`: `h1` + a few short paragraphs. Same chrome. No mid-page Privacy · Contact · Home row. No product pitch
+- Privacy: long-form. Air after `h1` before “Last updated”. `mt-10` before each `h2`. Do not rewrite legal copy to fix spacing
+
+## Footer
+
+Legal block first (substance unchanged): Good Standing Software Ltd, Companies House number, registered office. Then labels only — Contact · Survey · Privacy.
+
+| Label | Target |
+|---|---|
+| Contact | `mailto:info@goodstanding.co.uk` (same tab) |
+| Survey | `https://research.goodstanding.co.uk/r/Bz5oLN?ref=footer` (`target="_blank"` `rel="noopener noreferrer"`) |
+| Privacy | `privacy/` or `./` on that page (same tab) |
+
+Form is Bz5oLN on `research.goodstanding.co.uk`. Tally redirect to `/thanks/` is wired in Tally, not this repo.
+
+## Chrome and static
+
+- No cards, gradients, or animation
+- Links underlined (ink ~55%; full ink on hover). Brand and nav not underlined at rest
+- GitHub Pages: committed HTML + `assets/site.css`. No runtime
+- Umami Cloud script in each public `<head>` only (page views; no cookies). No other trackers or pixels
+- Keep the existing `assets/site.css` preload. Do not add more
+- Do not invent schema.org types or a second JSON-LD graph

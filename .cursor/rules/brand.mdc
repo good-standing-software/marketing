@@ -5,8 +5,6 @@ alwaysApply: true
 
 # Brand and prose
 
-Canonical detail: [DESIGN.md](DESIGN.md) (Names, Voice).
-
 ## Names
 
 - Product: Good Standing
@@ -14,7 +12,7 @@ Canonical detail: [DESIGN.md](DESIGN.md) (Names, Voice).
 - Legal: Good Standing Software Ltd (17423889)
 - Never write that the company “trades as Good Standing”
 
-## Site voice
+## Voice
 
 - Holding pages and `/thanks/` use company **we**, not “I’m Mark…”
 - Approachable, professional, intriguing. Not matey. Not salesy.
@@ -30,3 +28,8 @@ Canonical detail: [DESIGN.md](DESIGN.md) (Names, Voice).
 ## Links
 
 - Internal directory links keep a trailing slash (`privacy/`, `../`, `./`)
+
+## Out of this repo
+
+- Do not edit Tally form content or drive Tally via API from here
+- Do not invent outreach email files
