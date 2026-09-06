@@ -1,5 +1,5 @@
 ---
-description: Brand names and holding-site prose
+description: Brand names, document titles, and holding-site prose
 alwaysApply: true
 ---
 
@@ -11,6 +11,16 @@ alwaysApply: true
 - Trading: Good Standing Software (no Ltd)
 - Legal: Good Standing Software Ltd (17423889)
 - Never write that the company “trades as Good Standing”
+
+## Document titles
+
+Home: `Good Standing | …` (brand first). Other pages: `{Topic} | Good Standing` (brand last). Separator is `|` only — not an em dash or hyphen. Use the product name Good Standing, not the trading or legal name. Keep `<title>`, `og:title`, and `twitter:title` the same string on each page. If JSON-LD `WebPage` `name` (or `headline`) duplicates the document title, keep that in sync too.
+
+Locked titles:
+
+- Home: `Good Standing | software for UK membership bodies`
+- Privacy: `Privacy notice | Good Standing`
+- Thanks: `Thanks | Good Standing`
 
 ## Voice
 
@@ -28,6 +38,20 @@ alwaysApply: true
 ## Links
 
 - Internal directory links keep a trailing slash (`privacy/`, `../`, `./`)
+
+## Consistency checklist
+
+When editing public HTML, check these in one pass:
+
+- Titles / `og:title` / `twitter:title` (and matching JSON-LD name) in sync
+- Brand position: home brand-first; inner pages topic-first
+- Separator is `|` in titles only; body copy may keep em dashes
+- We-voice on holding pages
+- Names lock (product / trading / legal)
+- Meta descriptions match the page’s actual purpose (privacy is a notice, not a product pitch)
+- H1 aligns with the title topic (`Thanks` on `/thanks/`)
+- Internal directory links keep a trailing slash; footer Survey uses `?ref=footer`; homepage survey uses `?ref=homepage`
+- External links follow the site pattern (`target="_blank"` `rel="noopener noreferrer"`)
 
 ## Out of this repo
 
