@@ -2,6 +2,7 @@
 
 @source "../index.html";
 @source "../privacy/index.html";
+@source "../thanks/index.html";
 @source not inline("contents");
 
 @theme {
