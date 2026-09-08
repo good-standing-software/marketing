@@ -1,0 +1,254 @@
+---
+description: Notion CRM for researching, scoring, and ranking UK membership bodies
+alwaysApply: true
+---
+
+# Membership bodies CRM
+
+Use this when researching, scoring, ranking, or adding UK membership bodies in Notion. Do not use it for Tally copy, Gmail drafts, or Surveyor code. Outreach letter copy lives in `brand.mdc`.
+
+This rule replaces the old Notion skill. Do not load that page as a skill.
+
+## Destination
+
+- Database: https://app.notion.com/p/89e3bfa0b57149fa8ab6952d4d8f2170
+- Data source: `collection://9952bb13-ed3e-4c1f-8df5-6f65b98c4323`
+- Views: **Overview**, **Send queue**, **Outreach**, **Score audit** (Active + Score checked is false), **Clusters** (board by Cluster)
+- Score audit: `view://3d5ec775-22dd-8163-8e55-000ca563749b` — query in **view mode**. Empty is necessary, not completion
+- New pages: parent `data_source_id` `9952bb13-ed3e-4c1f-8df5-6f65b98c4323`
+
+Fetch the live schema. Do not assume property names.
+
+One row = one organisation. Research, outreach, and survey results live on the same page. Do **not** create a second contacts or survey database. This database is the source of truth.
+
+## Uniqueness
+
+Before create, search name, acronym, and proposed slug with `notion-search` + `data_source_url` `collection://9952bb13-ed3e-4c1f-8df5-6f65b98c4323`. Do **not** set `filters.title_only`. AI search may be plan-gated.
+
+If a richer page exists, update it. Same body twice: keep the richer page; mark the other Exclude with `Duplicate of {slug}`. Do not trash unless Mark asks. Never create a row you could not uniqueness-check.
+
+## Hard ICP
+
+Research **small UK membership or register bodies** that likely still run standing by hand.
+
+**Active** only when all are true:
+
+1. UK geography (UK-wide, a UK nation, or international-with-UK-base that serves UK members).
+2. Membership body or voluntary/PSA-style register — not a statutory regulator.
+3. **Continuing education is a condition of membership or register standing** (hours, points, or a documented annual/cycle check). Soft “we offer events”, “members are asked to record hours”, or homepage “keep knowledge updated” is **not** a gate → Backlog, standing 5. A course catalogue, or another body’s accreditation pathway (e.g. FMC hours on an NFM page), is not a membership gate.
+4. Size Under 5000, or unknown and looks small.
+5. Systems are not Enterprise AMS.
+
+CE only because GDC / GOC / HCPC / a statute requires it → **Statutory only** → **Exclude**.
+
+CE only for a diploma, fellowship, or AMA-style programme → **Programme only** → **Exclude**.
+
+Do **not** gift Active. Active needs an evidenced hours-year remaining-member gate plus a UK professional membership or register.
+
+## Wave (eligibility, before score)
+
+Select. Locked: `Active` | `Backlog` | `Exclude`. There is **no** “Active Adjacent” Wave. Adjacent is an **ICP lane**.
+
+- **Exclude**: statutory regulator; programme-only or statutory-only CE; off-ICP; or asked not to be contacted
+- **Backlog**: Over 5000, **or** Enterprise AMS, **or** no UK standing gate, **or** too thin to email (no site and no email)
+- **Active**: passes the hard ICP and is small enough to email
+
+Keep Exclude rows so the next agent does not re-research the same regulator or soft peer.
+
+## Fit score (0–100)
+
+**Fit score** is a Notion formula: Standing + Size + Systems + Admin + Inbox. Do **not** write Fit score.
+
+Write the five component number fields. Write **Score breakdown** as `standing N / size N / systems N / admin N / contact N` (fifth component = **Inbox**).
+
+| Component | Max | Guide |
+|---|---|---|
+| Standing | 35 | Membership or register hard hours = 35. Accreditation / re-accreditation = 25. Soft encourage = 5. None, programme-only, or statutory-only = 0. |
+| Size | 25 | Under 300 = 25. 300–500 = 22. 501–2000 = 16. 2001–5000 = 8. Over 5000 = 0. Unknown = 12. |
+| Systems | 20 | Manual / spreadsheets = 20. Lightweight AMS, no CE module (Wild Apricot, MemberMojo) = 18. Website CMS only = 16. Custom = 8. Named mid-market AMS = 6. Enterprise = 0. AMS class Unknown = 8 — do not gift CMS 16. |
+| Admin | 10 | Volunteers = 10. Mix = 8. Unknown = 5. Paid staff = 4. External / AMC = 2. |
+| Inbox (Contact) | 10 | Membership email + phone = 10. Email only = 7. None = 0. |
+
+Example: RWPN = 35 + 22 + 18 + 8 + 10 = **93**.
+
+**Score notes**: one or two sentences of *why* — not emails, company numbers, or deepen-log chatter.
+
+- Empty Score breakdown on an Active at 86–90 is unfinished. Recalculate.
+- No member count → Size Unknown = 12. Do not gift Under 300.
+- “Over 500” is 501–2000, not 300–500.
+- Assessed-entry genealogist bodies with study days and no hour cycle (AGRA, ASGRA) → Backlog, standing 5, Sendable No if no inbox.
+
+**Score checked**: set when formula Fit score equals the Score breakdown sum and Wave matches the ICP rules.
+
+## Send rank
+
+Survey-email order — **not** Fit score. Do **not** invent ranks.
+
+Unique integers `1…N` only when all of: Wave = Active; Opted out is not true; Research status is Researched or Deepened (never Stub); Primary email is present.
+
+Sort that set by Fit score descending, then Evidence confidence (High → Medium → Low), then Slug ascending.
+
+Recompute the **whole sendable set** after creates or score changes. Do not mint a one-off `1` that collides.
+
+If `query_data_sources` is unavailable, leave **Send rank** empty and say so.
+
+Stubs, Exclude, Backlog, and opted-out rows: **Send rank** empty.
+
+## Slug
+
+Kebab-case full name, lowercase, unique. Example: `rehabilitation-workers-professional-network`.
+
+## Inboxes
+
+Do not invent Primary email, Secondary email, or a named-person inbox. Official inbox or none.
+
+Do not copy named-person leftovers, shared umbrella inboxes, redacted Charity Commission addresses, or third-party company-record leftovers onto a different body.
+
+No official inbox → **Inbox** 0, **Email quality** None, **Sendable** No, even if Active.
+
+## Survey status
+
+Do not invent **Survey status** or **Survey response summary**.
+
+Locked **Survey status**: `Not sent` | `Link sent` | `Started` | `Completed` | `Declined` | `Do not contact`.
+
+**Sendable**: Yes only if Wave = Active, not opted out, not Stub, and Primary email is present.
+
+Do not mark Survey status `Link sent` or set **Last surveyed** until Mark actually sends. See `brand.mdc`.
+
+## Locked selects
+
+Do not invent options.
+
+| Property | Locked values |
+|---|---|
+| Wave | Active, Backlog, Exclude |
+| Org type | Professional body, Trade association, Learned society, Regulatory or register, Other |
+| Geography | UK-wide, England, Scotland, Wales, Northern Ireland, International with UK base |
+| Governance | Ltd by guarantee, Royal charter, Charity / CIO, Unincorporated, Statutory, Unknown |
+| Email angle | Spreadsheets, Lightweight AMS, Volunteer admin, Register audit, Fees, Unknown |
+| Standing gate | Membership standing, Register standing, Accreditation track, Programme only, Statutory only, None, Unknown |
+| ICP lane | Core, Adjacent, Out |
+| Sendable | Yes, No |
+| Survey status | Not sent, Link sent, Started, Completed, Declined, Do not contact |
+
+## Fields
+
+Use structured fields. Do not dump the same fact in three places.
+
+**Identity** — **Name**, **Acronym**, **Slug**, **Discipline** (specific profession: `vision rehabilitation`, `orthodontic technology`). Do not add a Sector option for a niche. **Sector**: prefer coarse tags already on the schema (`Health`, `Legal`, `Education`…). Existing niche tags may stay; do not grow the list. **Org type**, **Geography**, **Website**.
+
+**Standing** — **Continuing education required**: Yes only when the gate is membership, register, or accreditation. Programme-only and statutory-only → No; still record hours in **CE requirement** (short fact, e.g. `250 hours / 5 years (UKCP)`). **Standing complexity**, **Public register**.
+
+**Size and ops** — **Members estimate**, **Members band** (must match the estimate), **Count year** (calendar year of that estimate; empty if unpublished), **Established year**. **Admin model**, **Governance**, **Legal / charity no.** (`Co 09179719` or `Charity 1150137`). **Membership system** is the *class*; product name goes in **AMS product**. Wild Apricot uses class `MemberMojo / lightweight` — do not rename that option.
+
+**Contacts** — **Primary email**, **Secondary email**, **Phone**, **Postal address**, **Named contact**, **Contact role**. **Contact notes**: leftovers only — never repeat emails, phones, or company numbers already in typed fields.
+
+**Evidence** — **Sources**: URLs only, one per line or separated by ` ; `. **Tech signals**: one line. **Evidence confidence**: High = primary pages + a legal/register source; Medium = site only; Low = list mention or dead site. **Research status**: Stub (name only) | Researched (fields + short body) | Deepened (standing gate evidenced). **Last researched**: the day you checked.
+
+**Pipeline** — Wave, component scores, **Score breakdown**, **Score notes**, **Send rank**. Do not write **Fit score**. **Outreach status**, **Survey status**, **Survey response summary** (Surveyor/Tally later). **Opted out** / **Opted out on** when they say stop. **Exclude reason**: one sentence so the next agent does not re-open the case.
+
+**Marketing (every Core Active)**
+
+- **ICP lane**: Core = Active **and** standing pain is likely still manual (volunteer or mix admin; manual / CMS / lightweight AMS; gated population is the membership or register product). Adjacent = Active but staffed mid-size, Known AMS, custom portal, or an accreditation track on a larger membership. Out = Backlog or Exclude. Active Wave + Adjacent lane is allowed — Wave is eligibility, lane is send priority.
+- **Persona**: Secretary | Registrar | CEO / Director | Volunteer admin | Unknown
+- **Lead source**: PSA register | HMRC List 3 | Peer of existing | Web search | Regulator site | Other
+- **Next action**: Research | Draft survey email | Send survey | Follow up | Pause | Done
+- **Campaign**: Survey wave 1 (sendable Core) | Later | Not queued
+- **Outreach hook**: one sentence Mark can paste; no “CPD”
+- **Pain hypothesis**: standing + fees + membership admin friction
+- **Why now**: timing, not a second hook
+- **Survey URL**: `https://research.goodstanding.co.uk/r/Bz5oLN?ref={slug}` for sendable Actives only
+- **Preferred channel**, **Warmth** (Cold until they reply), **Owner** (Mark)
+- **PSA accredited**, **Standing audit**, **Fee collection**, **Annual fee**, **Renewal month**
+- **Member count source**, **Companies House URL**, **LinkedIn**, **Follow-up on**, **Last contacted**
+- **Cluster**: PSA small register | Complementary | Animal | Celebrant / funeral | Land / conservation | Editing / finance | Counselling | Specialist health | Trade / guild | ADR / mediation | Other. Campaign batches, not another Sector tag.
+- **Gated headcount**: people actually subject to the standing gate. Score **Size** from Members band; use gated headcount for Core vs Adjacent and an honest hook. Empty if unpublished.
+- **Email quality**: Named person | Generic inbox | Unverified | None
+- **CE policy URL** and **Register URL**: one-click evidence. **Sources** stays the full URL list.
+- **Subject line**: must match `brand.mdc` (`A Short Survey`); no “CPD”
+- **HQ town**: later in-person clustering
+
+Do not put “CPD” in Outreach hook, Pain hypothesis, Why now, Subject line, or Score notes.
+
+## Page body
+
+Replace the whole body when cleaning a dumping-ground page. Do not append another spot-check heading.
+
+```
+## Purpose
+One or two sentences.
+## Establishment
+Year, legal form, register status.
+## Governance
+Who runs it.
+## Contacts
+Only facts that are not already in properties, or a short named-person note.
+## Website & systems
+What the site is built on; whether CE is logged there.
+## Fit notes
+Wave + standing gate + why the score is what it is. One short deepen line if needed.
+```
+
+Never stack “spot-check — leave Exclude” sections. Update **Last researched** and **Exclude reason** instead.
+
+## Research workflow
+
+1. Follow this rule. Fetch the schema.
+2. Search name, acronym, and slug before creating.
+3. Read the body’s own membership, register, and continuing-education pages. Statutory regulator pages are supporting evidence, not a membership gate.
+4. Fill structured fields first, then the short body.
+5. Score into the component number fields. Set Wave from eligibility, not from the score. Do not write Fit score.
+6. Unique slug. Recompute Send rank only if you can see the full sendable set; otherwise leave it empty.
+7. Fetch the page you wrote: no duplicate emails in Contact notes; Sources are URLs; Score breakdown sums to Fit score; Stub has no Send rank.
+
+## Parallel leftover hunting
+
+Hunt in parallel, create in series. Two subagents must not create at the same time.
+
+**Coordinator** owns Score audit, uniqueness lock, create, and reorient.
+
+1. Query Score audit. If it is not empty, finish those Actives first. Do not launch hunters.
+2. Partition remaining official lists into **disjoint** name batches. Typical slices: HMRC List 3 complementary leftovers; PSA complementary leftovers; Charity Commission / OSCR / CCNI healer-association leftovers; unpublished BAHA “40+” only if independently named with their own remaining-member hours.
+3. Launch 2–4 hunter subagents in **one** turn. Each gets: this rule, data source `9952bb13-ed3e-4c1f-8df5-6f65b98c4323`, sit-on / already-slugged names **for its slice only**, and **do not create / do not update CRM rows**.
+4. Merge packets. Drop already-slugged, sit-on, individuals, universities, Republic of Ireland-only, and statutory-only leftovers.
+5. Uniqueness-search the remaining names again.
+6. Create **2–3 unique slugs** only (coordinator, or one creator). `allow_async: true`, then poll. Re-query Score audit until empty. Recritical Fit / Wave / lane. Add a CRM field only if a real hole appears. Do not invent Send ranks. Campaign = Not queued on leftover creates.
+7. Repeat until remaining official lists are exhausted.
+
+Coordinator replies stay short. Evidence lives in hunter packets and on CRM pages.
+
+**Hunters** (read-only): uniqueness-search each name; read membership / register / standing pages; return a packet; stop. Must not create, update, or invent Send ranks.
+
+Packet — one line per name, plus a short Unique block only when needed:
+
+- **Already slugged** — exact title + page id
+- **Sit-on** — leftover name → existing slug
+- **Do not slug** — individual, university, venue, church-without-gate, statutory, no remaining-member body
+- **Needs coordinator fetch** — search ambiguous; do not mark Unique
+- **Unique, ready** — kebab slug; standing gate; Wave / ICP lane; Fit as `standing/size/systems/admin/contact`; official inbox or none; 3–8 source URLs; Distinct from…; Do not copy… (named-person / shared umbrella inboxes)
+
+Absorbed / amalgamated / dissolved names still on an official list: return **Unique, ready** as Exclude even if search is empty.
+
+**Creator** (one at a time): receives only coordinator-rechecked Unique, ready packets. Creates those 2–3 rows. Does not hunt. Score checked = true. Last researched = today. Send rank empty. Coordinator re-proves Score audit.
+
+## Brand and copy
+
+Internal research may quote a body’s own “CPD” scheme name in Sources or Exclude reason. Do **not** put “CPD” in Score notes, Fit notes, or Survey response summary. Do not invent Gmail files. Do not edit Tally from this workflow.
+
+If Slack or a prior session is unavailable, treat this database as the source of truth.
+
+## Confirmation
+
+Ask Mark before: trashing pages; emailing anyone; changing Wave on a row already Sent or Engaged; collapsing Sector options in bulk; renaming `MemberMojo / lightweight`.
+
+## Completion
+
+- Unique slug
+- Standing gate set
+- Gated headcount filled when the gate applies to a known subset
+- Count year filled when Members estimate has a dated source
+- Fit score (formula) = sum in Score breakdown
+- Send rank empty unless the row is sendable **and** the full set was recomputed
+- Page body matches the template (no spot-check stack)
+- Typed contact fields not repeated in Contact notes
