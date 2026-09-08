@@ -23,7 +23,7 @@ Do not invent colours or a second palette. Do not use clay as a large CTA fill.
 
 ## Mark and header
 
-Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is a copy of the same mark. `assets/logo.png` is a 512×512 transparent raster of that mark for the GitHub org/profile avatar. `assets/logo-white.png` is the same mark on paper `#F4F1EA`. Do not invent another mark. Do not rewrite the SVG viewBox. Do not use `-ml` or clip/translate to align the mark.
+Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is the same mark. Do not invent another mark, rewrite the SVG viewBox, or use `-ml` / clip / translate to align it.
 
 | File | Use |
 |---|---|
@@ -70,4 +70,4 @@ Form is Bz5oLN on `research.goodstanding.co.uk`. Tally redirect to `/thanks/` is
 - Umami Cloud script in each public `<head>` only (page views; no cookies). No other trackers or pixels
 - Keep the existing `assets/site.css` preload. Do not add more
 - Do not invent schema.org types or a second JSON-LD graph
-- `llms.txt` at the site root is the LLM-facing index (`https://goodstanding.co.uk/llms.txt`). When adding, renaming, removing, or materially changing a public page — or changing the product one-liner / company naming — update `/llms.txt` in the same PR so it stays a living index
+- `llms.txt` at the site root is the LLM-facing index. When adding, renaming, removing, or materially changing a public page — or the product one-liner / company naming — update `/llms.txt` in the same PR

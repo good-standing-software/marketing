@@ -14,7 +14,7 @@ alwaysApply: true
 
 ## Document titles
 
-Home: `Good Standing | …` (brand first). Other pages: `{Topic} | Good Standing` (brand last). Separator is `|` only — not an em dash or hyphen. Use the product name Good Standing, not the trading or legal name. Keep `<title>`, `og:title`, and `twitter:title` the same string on each page. If JSON-LD `WebPage` `name` (or `headline`) duplicates the document title, keep that in sync too.
+Home: `Good Standing | …` (brand first). Other pages: `{Topic} | Good Standing` (brand last). Separator is `|` only. Use the product name, not trading or legal. Keep `<title>`, `og:title`, and `twitter:title` the same. If JSON-LD `WebPage` `name` or `headline` duplicates the title, keep it in sync.
 
 Locked titles:
 
@@ -24,37 +24,37 @@ Locked titles:
 
 ## Voice
 
-- Holding pages and `/thanks/` use company **we**, not “I’m Mark…”
+- Holding pages and `/thanks/`: company **we**, not “I’m Mark…”
 - Approachable, professional, intriguing. Not matey. Not salesy.
 - Research before product; nothing to buy. No product-launch CTA grid.
-- Do not use “CPD” in marketing, survey, or outreach blurbs — say continuing education, fees, membership, or good standing as the sentence needs
-- Outreach is first-person Mark (Director) and lives in Gmail — do not invent email files here. See Outreach below.
+- Do not use “CPD” in marketing, survey, or outreach — say continuing education, fees, membership, or good standing
+- Outreach is first-person Mark (Director) and lives in Gmail. See Outreach.
 
-## Tone by surface
+## Tone
 
-- Home / thanks: letterhead marketing — short, research posture
-- Privacy: ICO-style notice — clarity and consistency, not intrigue. Do not gut the legal structure or rewrite it for spacing or tone
-- Outreach email: first-person Mark; same letter to everyone; research posture, not a pitch
+- Home / thanks: letterhead — short, research posture
+- Privacy: ICO-style notice. Do not gut legal structure or rewrite it for spacing or tone
+- Outreach email: first-person Mark; same letter to everyone; research, not a pitch
 
 ## Outreach
 
-Every recipient gets the same subject and body. Do not assume we know anything about the target organisation — no org name in the subject, no AMS, hours, register, size, or other on-file facts in the copy.
+Same subject and body for every recipient. Do not write as if we know the organisation — no org name in the subject, no AMS, hours, register, size, or other on-file facts.
 
-The only things that change per send:
+Only these change per send:
 
 - `To`
-- Survey URL query params `ref` and `email` (`email` URL-encoded)
+- Survey URL `ref` and `email` (`email` URL-encoded)
 
-Do not add `organisation=`, per-org `utm_content`, or any other query param. Site and privacy links stay identical on every send.
+Do not add `organisation=`, per-org `utm_content`, or any other query param. Site and privacy links stay identical.
 
-Locked subject: `A short survey`
+Locked subject: `A Short Survey`
 
 Locked body:
 
 ```
 Hi, I'm Mark from Good Standing Software. We're researching how UK professional bodies handle membership, fees and good standing.
 
-Before building anything, we want to know whether there's a real need — and where the manual work gets messy enough that software would actually help.
+Before building anything, we want to know whether there's a real need — and where the manual work becomes messy enough that software would actually help.
 
 The survey is confidential, there's nothing to buy, and it takes about 5–7 minutes:
 https://research.goodstanding.co.uk/r/Bz5oLN?ref={ref}&email={urlencoded-email}
@@ -74,27 +74,25 @@ Good Standing Software Ltd, company no. 17423889
 
 - Close is `Thanks in advance,` then `Mark` — not `Thanks,`
 - Footer always includes company number, Shelton Street address, and `To opt out, reply stop.`
-- Gmail may wrap links in `google.com/url?q=` when a draft is read back — that is Gmail, not extra copy. Write the clean URLs above.
-- Drafts live in Gmail (`mark@goodstanding.co.uk`). Do not invent email files in this repo.
-- Do not mark CRM Survey status Link sent or set Last surveyed until Mark actually sends.
+- Gmail may wrap links in `google.com/url?q=` on read-back. Write the clean URLs above.
+- Drafts live in Gmail (`mark@goodstanding.co.uk`). Do not invent email files.
+- Do not mark CRM Survey status Link sent or set Last surveyed until Mark actually sends. See `crm.mdc`.
 
 ## Links
 
-- Internal directory links keep a trailing slash (`privacy/`, `../`, `./`)
+Internal directory links keep a trailing slash (`privacy/`, `../`, `./`).
 
-## Consistency checklist
-
-When editing public HTML, check these in one pass:
+## Checklist (public HTML)
 
 - Titles / `og:title` / `twitter:title` (and matching JSON-LD name) in sync
 - Brand position: home brand-first; inner pages topic-first
-- Separator is `|` in titles only; body copy may keep em dashes
+- Separator `|` in titles only; body may keep em dashes
 - We-voice on holding pages
-- Names lock (product / trading / legal)
-- Meta descriptions match the page’s actual purpose (privacy is a notice, not a product pitch)
+- Names lock
+- Meta descriptions match the page (privacy is a notice, not a pitch)
 - H1 aligns with the title topic (`Thanks` on `/thanks/`)
-- Internal directory links keep a trailing slash; footer Survey uses `?ref=footer`; homepage survey uses `?ref=homepage`
-- External links follow the site pattern (`target="_blank"` `rel="noopener noreferrer"`)
+- Footer Survey `?ref=footer`; homepage survey `?ref=homepage`
+- External links: `target="_blank"` `rel="noopener noreferrer"`
 
 ## Out of this repo
 
