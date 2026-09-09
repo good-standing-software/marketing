@@ -43,10 +43,11 @@ Same subject and body for every recipient. Do not write as if we know the organi
 Only these change per send:
 
 - `To`
-- Survey URL `ref` and `email` (`email` URL-encoded)
+- Survey URL `ref` = **Slug**; `email` = URL-encoded **Primary email**
 
 Do not add `organisation=`, per-org `utm_content`, or any other query param. Site, Companies House, ICO, and privacy links stay identical.
 
+There is no CRM Subject line or Survey URL field — infer both from `brand.mdc` + Slug + Primary email.
 Locked subject: `A Short Survey`
 
 Locked letter (HTML in Gmail; linked words in **bold**):
@@ -75,7 +76,7 @@ To opt out, please reply **stop**.
 
 Links (clean `href`, `target="_blank"`):
 
-- **survey** → `https://research.goodstanding.co.uk/r/Bz5oLN?ref={ref}&email={urlencoded-email}`
+- **survey** → `https://research.goodstanding.co.uk/r/Bz5oLN?ref={Slug}&email={urlencoded-Primary-email}`
 - **Good Standing Software Ltd** → `https://goodstanding.co.uk/?utm_source=survey&utm_medium=email&utm_campaign=research`
 - **17423889** → `https://find-and-update.company-information.service.gov.uk/company/17423889`
 - **ZC233855** → `https://ico.org.uk/ESDWebPages/Entry/ZC233855`
@@ -87,7 +88,7 @@ Links (clean `href`, `target="_blank"`):
 - UTM order is `utm_source`, `utm_medium`, `utm_campaign`
 - The Gmail API rewrites `href`s to `google.com/url`. Write clean URLs; finish the links in the Gmail UI so the stored MIME stays clean
 - Drafts live in Gmail (`mark@goodstanding.co.uk`). Do not invent email files
-- Do not mark CRM Survey status Link sent or set Last surveyed until Mark actually sends. See `crm.mdc`
+- Do not mark CRM Survey status Link sent or set Last surveyed / Last contacted until Mark confirms a send; then update that row. See `crm.mdc`
 
 ## Links
 
