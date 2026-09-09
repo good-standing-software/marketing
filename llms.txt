@@ -6,7 +6,7 @@ Names: product is Good Standing; trading name is Good Standing Software; legal n
 
 ## Pages
 
-- [Home](https://goodstanding.co.uk/): What we’re building and why we’re researching membership-admin work today
+- [Home](https://goodstanding.co.uk/): Research before product; confidential survey; nothing to buy
 - [Privacy notice](https://goodstanding.co.uk/privacy/): Data controller Good Standing Software Ltd; ICO registration ZC233855; how we process holding-site, survey, and intended product personal data
 - [Survey thank you](https://goodstanding.co.uk/thanks/): Landing page after survey completion
 
