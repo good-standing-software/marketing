@@ -46,7 +46,7 @@ Live header is `assets/logo.svg` + CSS `.wordmark`. `favicon.svg` is the same ma
 
 Never `[&_p]:m-0`. Use `gap-y-*` or winning margins. Do not put `flex flex-col` around `main p` without `gap-y-*`.
 
-- Homepage main: tagline + one why paragraph, `max-w-[34rem]`, body `mt-8`. One text survey link (`https://research.goodstanding.co.uk/r/Bz5oLN?ref=homepage`); not a button. No `email=`. No mailto in main. Block wrapper so `main p` margins collapse
+- Homepage main: tagline + two why paragraphs (the work as it is; research before product), `max-w-[34rem]`, first body `mt-8`. One text survey link (`https://research.goodstanding.co.uk/r/Bz5oLN?ref=homepage`); not a button. No `email=`. No mailto in main. Block wrapper so `main p` margins collapse
 - `/thanks/`: `h1` + a few short paragraphs. Same chrome. No mid-page Privacy · Contact · Home row. No product pitch
 - Privacy: long-form. Air after `h1` before “Last updated”. `mt-10` before each `h2`. Do not rewrite legal copy to fix spacing
 
