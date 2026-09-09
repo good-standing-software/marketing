@@ -114,7 +114,13 @@ Locked **Survey status**: `Not sent` | `Link sent` | `Started` | `Completed` | `
 
 **Sendable**: Yes only if Wave = Active, not opted out, not Stub, and Primary email is present.
 
-Do not mark Survey status `Link sent` or set **Last surveyed** until Mark actually sends. See `brand.mdc`.
+Do not mark Survey status `Link sent` or set **Last surveyed** / **Last contacted** until Mark confirms a send. When he does, update that row: Survey status → `Link sent`, set **Last surveyed** and **Last contacted** to the send day, and move **Next action** off Draft/Send if it still says that. Do not invent sends.
+
+There is no **Subject line** or **Survey URL** property. Subject is always `A Short Survey` (`brand.mdc`). Survey link is inferred at send time:
+
+`https://research.goodstanding.co.uk/r/Bz5oLN?ref={Slug}&email={URL-encoded Primary email}`
+
+Only `To`, `ref`, and `email` change per recipient. See `brand.mdc`.
 
 ## Locked selects
 
@@ -155,10 +161,9 @@ Use structured fields. Do not dump the same fact in three places.
 - **Lead source**: PSA register | HMRC List 3 | Peer of existing | Web search | Regulator site | Other
 - **Next action**: Research | Draft survey email | Send survey | Follow up | Pause | Done
 - **Campaign**: Survey wave 1 (sendable Core) | Later | Not queued
-- **Outreach hook**: one sentence Mark can paste; no “CPD”
+- **Outreach hook**: one sentence Mark can paste into notes; no “CPD” — not the email subject
 - **Pain hypothesis**: standing + fees + membership admin friction
 - **Why now**: timing, not a second hook
-- **Survey URL**: `https://research.goodstanding.co.uk/r/Bz5oLN?ref={slug}` for sendable Actives only
 - **Preferred channel**, **Warmth** (Cold until they reply), **Owner** (Mark)
 - **PSA accredited**, **Standing audit**, **Fee collection**, **Annual fee**, **Renewal month**
 - **Member count source**, **Companies House URL**, **LinkedIn**, **Follow-up on**, **Last contacted**
@@ -166,10 +171,9 @@ Use structured fields. Do not dump the same fact in three places.
 - **Gated headcount**: people actually subject to the standing gate. Score **Size** from Members band; use gated headcount for Core vs Adjacent and an honest hook. Empty if unpublished.
 - **Email quality**: Named person | Generic inbox | Unverified | None
 - **CE policy URL** and **Register URL**: one-click evidence. **Sources** stays the full URL list.
-- **Subject line**: must match `brand.mdc` (`A Short Survey`); no “CPD”
 - **HQ town**: later in-person clustering
 
-Do not put “CPD” in Outreach hook, Pain hypothesis, Why now, Subject line, or Score notes.
+Do not put “CPD” in Outreach hook, Pain hypothesis, Why now, or Score notes. Do not recreate **Subject line** or **Survey URL** columns.
 
 ## Page body
 
