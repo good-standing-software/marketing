@@ -52,7 +52,7 @@ Never `[&_p]:m-0`. Use `gap-y-*` or winning margins. Do not put `flex flex-col` 
 
 ## Footer
 
-Legal block first (substance unchanged): Good Standing Software Ltd, Companies House number, registered office. Then labels only — Contact · Survey · Privacy.
+Legal block first: registered name; place of registration, company number, ICO number; registered office address (no “Registered office:” prefix — it is the only address). Then labels only — Contact · Survey · Privacy.
 
 | Label | Target |
 |---|---|
