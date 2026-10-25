@@ -2,7 +2,7 @@
 
 Static holding site for [goodstanding.co.uk](https://goodstanding.co.uk), served from GitHub Pages.
 
-Cursor rules in `.cursor/rules/`: `brand.mdc` (names, titles, outreach), `design.mdc` (tokens, chrome), `crm.mdc` (Notion membership CRM), `conventional-commits.mdc`. The header uses `assets/logo.svg` plus the CSS serif wordmark. `favicon.svg` is a copy of the same mark. `assets/logo.png` is a 512×512 transparent raster of that mark for the GitHub org/profile avatar. `assets/logo-white.png` is the same 512×512 mark on paper `#F4F1EA`. `assets/og.png` is the social preview image.
+Brand and design rules are in `.claude/rules/`; the Notion CRM and survey outreach are the `crm` skill in `.claude/skills/`. The header uses `assets/logo.svg` plus the CSS serif wordmark. `favicon.svg` is a copy of the same mark. `assets/logo.png` is a 512×512 transparent raster of that mark for the GitHub org/profile avatar. `assets/logo-white.png` is the same 512×512 mark on paper `#F4F1EA`. `assets/og.png` is the social preview image.
 
 There is no application runtime. Pages are committed HTML plus a built stylesheet.
 
